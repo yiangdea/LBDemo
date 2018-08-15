@@ -10,7 +10,9 @@
 #define CommonLibHeader_h
 
 #import <Masonry.h>
-#import <SVGKit.h>
+#import <UIImageView+WebCache.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #endif /* CommonLibHeader_h */
 

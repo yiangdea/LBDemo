@@ -6,12 +6,14 @@
 //  Copyright © 2018年 杨达. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "LBLoadingDeal.h"
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 #import "CommonLibHeader.h"
 
-@implementation LBLoadingDeal
+@implementation LBLoadingDeal : NSObject
 
 + (void)loadingBackDeal {
     UIViewController *lasVC = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
@@ -26,12 +28,17 @@
     labTitle.text = @"一阵风一阵雨一阵晴天,半是文半是武半是野蛮";
     [launchView addSubview:labTitle];
     
-    UIImageView *imageLoading = [UIImageView new];
-    [launchView addSubview:imageLoading];
+    NSString *svgPath = [[NSBundle mainBundle] pathForResource:@"SVGLoding" ofType:nil];
+    NSData *svgData = [NSData dataWithContentsOfFile:svgPath];
+    NSString *reasourcePath = [[NSBundle mainBundle] resourcePath];
+    NSURL *baseUrl = [[NSURL alloc] initFileURLWithPath:reasourcePath isDirectory:true];
+    UIWebView *imageLoading = [[UIWebView alloc] init];
+    imageLoading.frame = CGRectMake(0, 0, 200, 200);
+    [imageLoading loadData:svgData MIMEType:@"image/svg+xml" textEncodingName:@"UTF-8" baseURL:baseUrl];
     
     [labTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(16);
-        make.right.mas_equalTo(-16);
+        make.left.mas_equalTo(lasVC.view).mas_offset(16);
+        make.right.mas_equalTo(lasVC.view).mas_offset(-16);
         if (@available(iOS 11.0, *)) {
             make.top.mas_equalTo(lasVC.view.mas_safeAreaLayoutGuideTop).mas_offset(80);
         } else {

@@ -16,6 +16,8 @@
 		1F6F336E2123322B0067B6BA /* LBDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F336D2123322B0067B6BA /* LBDemoUITests.m */; };
 		1F6F337D2123EB8B0067B6BA /* LBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F337C2123EB8B0067B6BA /* LBScanViewController.m */; };
 		1F6F33A72123F7BA0067B6BA /* LBLoadingDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33A62123F7BA0067B6BA /* LBLoadingDeal.m */; };
+		1F6F33AD212415BE0067B6BA /* LBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33AC212415BE0067B6BA /* LBHelper.m */; };
+		1F6F33B021241B960067B6BA /* LBPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33AF21241B960067B6BA /* LBPictureCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		1F6F33A52123F7BA0067B6BA /* LBLoadingDeal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoadingDeal.h; sourceTree = "<group>"; };
 		1F6F33A62123F7BA0067B6BA /* LBLoadingDeal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadingDeal.m; sourceTree = "<group>"; };
 		1F6F33A82123F80B0067B6BA /* CommonLibHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLibHeader.h; sourceTree = "<group>"; };
+		1F6F33AB212415BE0067B6BA /* LBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHelper.h; sourceTree = "<group>"; };
+		1F6F33AC212415BE0067B6BA /* LBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHelper.m; sourceTree = "<group>"; };
+		1F6F33AE21241B960067B6BA /* LBPictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBPictureCell.h; sourceTree = "<group>"; };
+		1F6F33AF21241B960067B6BA /* LBPictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBPictureCell.m; sourceTree = "<group>"; };
 		30034684A905FB15F3C83F76 /* Pods-LBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7116724D1F0FF838F3AC822D /* libPods-LBDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LBDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,8 +125,12 @@
 				1F6F33582123322B0067B6BA /* main.m */,
 				1F6F337B2123EB8B0067B6BA /* LBScanViewController.h */,
 				1F6F337C2123EB8B0067B6BA /* LBScanViewController.m */,
+				1F6F33AE21241B960067B6BA /* LBPictureCell.h */,
+				1F6F33AF21241B960067B6BA /* LBPictureCell.m */,
 				1F6F33A52123F7BA0067B6BA /* LBLoadingDeal.h */,
 				1F6F33A62123F7BA0067B6BA /* LBLoadingDeal.m */,
+				1F6F33AB212415BE0067B6BA /* LBHelper.h */,
+				1F6F33AC212415BE0067B6BA /* LBHelper.m */,
 			);
 			path = LBDemo;
 			sourceTree = "<group>";
@@ -311,10 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6F33B021241B960067B6BA /* LBPictureCell.m in Sources */,
 				1F6F33A72123F7BA0067B6BA /* LBLoadingDeal.m in Sources */,
 				1F6F33592123322B0067B6BA /* main.m in Sources */,
 				1F6F337D2123EB8B0067B6BA /* LBScanViewController.m in Sources */,
 				1F6F334B2123322A0067B6BA /* AppDelegate.m in Sources */,
+				1F6F33AD212415BE0067B6BA /* LBHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +410,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -456,7 +468,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -483,6 +495,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = cloudist.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,6 +514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = cloudist.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

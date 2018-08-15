@@ -3,6 +3,5 @@ platform :ios, '9.0'
 target 'LBDemo' do
 	pod 'AFNetworking'
 	pod 'Masonry'
-    pod 'SDWebImage'
-	pod 'SVGKit'
+        pod 'SDWebImage'
 end

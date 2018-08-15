@@ -11,7 +11,7 @@
 #import "LBScanViewController.h"
 #import "CommonLibHeader.h"
 
-#import "LBLoadingDeal.h"
+#import "LBLoadingDeal.m"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    LBScanViewController *lbScanVC = [[LBScanViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:lbScanVC];
+    self.window.rootViewController = navi;
     [LBLoadingDeal loadingBackDeal];
     return YES;
 }

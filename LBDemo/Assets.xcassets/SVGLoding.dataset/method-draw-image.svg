@@ -1,0 +1,15 @@
+<svg width="401" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="402" width="403" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000" id="svg_1" height="403.000377" width="403.000421" y="0.999817" x="-1.000222" stroke-width="1.5" fill="#6D97AB"/>
+  <text stroke="#000" transform="matrix(1.6426699725377394,0,0,2.3368795858647435,-129.3555735940333,-240.62630678247305) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_2" y="195.921558" x="85.711231" stroke-opacity="null" stroke-width="0" fill="#ffffff">传说中的SVG Loding.</text>
+ </g>
+</svg>
