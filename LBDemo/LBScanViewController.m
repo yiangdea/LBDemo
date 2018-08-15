@@ -12,6 +12,7 @@
 #import "CommonLibHeader.h"
 
 #import "LBPictureCell.h"
+#import "LBPrePicView.h"
 
 @interface LBScanViewController ()<UITableViewDelegate, UITableViewDataSource, LBLoadingCellDelegate>
 
@@ -58,7 +59,12 @@
 
 #pragma mark - another
 - (void)didSelectCell:(LBPictureCell *)cell imgView:(UIImageView *)imgView {
-    
+    LBPrePicView *review = [[LBPrePicView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) Photo:imgView.image];
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionReveal;
+    transition.duration = 0.5;
+    [review.layer addAnimation:transition forKey:nil];
+    [self.navigationController.view addSubview:review];
 }
 
 #pragma mark - tabViewDelegate
