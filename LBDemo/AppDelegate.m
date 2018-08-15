@@ -11,7 +11,7 @@
 #import "LBScanViewController.h"
 #import "CommonLibHeader.h"
 
-#import "LBLoadingDeal.m"
+#import "LBLoadingDeal.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     LBScanViewController *lbScanVC = [[LBScanViewController alloc] init];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:lbScanVC];
+    navi.navigationBarHidden = YES;
     self.window.rootViewController = navi;
     [LBLoadingDeal loadingBackDeal];
     return YES;

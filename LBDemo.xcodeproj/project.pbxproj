@@ -15,9 +15,10 @@
 		1F6F33632123322B0067B6BA /* LBDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33622123322B0067B6BA /* LBDemoTests.m */; };
 		1F6F336E2123322B0067B6BA /* LBDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F336D2123322B0067B6BA /* LBDemoUITests.m */; };
 		1F6F337D2123EB8B0067B6BA /* LBScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F337C2123EB8B0067B6BA /* LBScanViewController.m */; };
-		1F6F33A72123F7BA0067B6BA /* LBLoadingDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33A62123F7BA0067B6BA /* LBLoadingDeal.m */; };
 		1F6F33AD212415BE0067B6BA /* LBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33AC212415BE0067B6BA /* LBHelper.m */; };
 		1F6F33B021241B960067B6BA /* LBPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33AF21241B960067B6BA /* LBPictureCell.m */; };
+		1F6F33B4212430090067B6BA /* LBLoadingDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33B3212430080067B6BA /* LBLoadingDeal.m */; };
+		1F6F33B72124323D0067B6BA /* LBPrePicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F33B62124323D0067B6BA /* LBPrePicView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +55,15 @@
 		1F6F336F2123322B0067B6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F6F337B2123EB8B0067B6BA /* LBScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBScanViewController.h; sourceTree = "<group>"; };
 		1F6F337C2123EB8B0067B6BA /* LBScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBScanViewController.m; sourceTree = "<group>"; };
-		1F6F33A52123F7BA0067B6BA /* LBLoadingDeal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoadingDeal.h; sourceTree = "<group>"; };
-		1F6F33A62123F7BA0067B6BA /* LBLoadingDeal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadingDeal.m; sourceTree = "<group>"; };
 		1F6F33A82123F80B0067B6BA /* CommonLibHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLibHeader.h; sourceTree = "<group>"; };
 		1F6F33AB212415BE0067B6BA /* LBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHelper.h; sourceTree = "<group>"; };
 		1F6F33AC212415BE0067B6BA /* LBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHelper.m; sourceTree = "<group>"; };
 		1F6F33AE21241B960067B6BA /* LBPictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBPictureCell.h; sourceTree = "<group>"; };
 		1F6F33AF21241B960067B6BA /* LBPictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBPictureCell.m; sourceTree = "<group>"; };
+		1F6F33B2212430080067B6BA /* LBLoadingDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLoadingDeal.h; sourceTree = "<group>"; };
+		1F6F33B3212430080067B6BA /* LBLoadingDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLoadingDeal.m; sourceTree = "<group>"; };
+		1F6F33B52124323D0067B6BA /* LBPrePicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBPrePicView.h; sourceTree = "<group>"; };
+		1F6F33B62124323D0067B6BA /* LBPrePicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBPrePicView.m; sourceTree = "<group>"; };
 		30034684A905FB15F3C83F76 /* Pods-LBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7116724D1F0FF838F3AC822D /* libPods-LBDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LBDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,10 +130,12 @@
 				1F6F337C2123EB8B0067B6BA /* LBScanViewController.m */,
 				1F6F33AE21241B960067B6BA /* LBPictureCell.h */,
 				1F6F33AF21241B960067B6BA /* LBPictureCell.m */,
-				1F6F33A52123F7BA0067B6BA /* LBLoadingDeal.h */,
-				1F6F33A62123F7BA0067B6BA /* LBLoadingDeal.m */,
 				1F6F33AB212415BE0067B6BA /* LBHelper.h */,
 				1F6F33AC212415BE0067B6BA /* LBHelper.m */,
+				1F6F33B2212430080067B6BA /* LBLoadingDeal.h */,
+				1F6F33B3212430080067B6BA /* LBLoadingDeal.m */,
+				1F6F33B52124323D0067B6BA /* LBPrePicView.h */,
+				1F6F33B62124323D0067B6BA /* LBPrePicView.m */,
 			);
 			path = LBDemo;
 			sourceTree = "<group>";
@@ -321,11 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6F33B4212430090067B6BA /* LBLoadingDeal.m in Sources */,
 				1F6F33B021241B960067B6BA /* LBPictureCell.m in Sources */,
-				1F6F33A72123F7BA0067B6BA /* LBLoadingDeal.m in Sources */,
 				1F6F33592123322B0067B6BA /* main.m in Sources */,
 				1F6F337D2123EB8B0067B6BA /* LBScanViewController.m in Sources */,
 				1F6F334B2123322A0067B6BA /* AppDelegate.m in Sources */,
+				1F6F33B72124323D0067B6BA /* LBPrePicView.m in Sources */,
 				1F6F33AD212415BE0067B6BA /* LBHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

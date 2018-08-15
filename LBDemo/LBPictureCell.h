@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) NSArray *arrUrls;
 
+@property (nonatomic, weak) UITableView *tabView;
+@property (nonatomic, assign) BOOL isNeedLoad;
 
 @property (nonatomic, strong) NSArray<UIImageView *> *arrImg;
 @property (nonatomic, strong) UIImageView *imageLeft;

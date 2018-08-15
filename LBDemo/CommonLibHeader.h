@@ -11,8 +11,6 @@
 
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 
 #endif /* CommonLibHeader_h */
 

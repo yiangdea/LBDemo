@@ -9,6 +9,7 @@
 #import "LBScanViewController.h"
 
 #import "LBHelper.h"
+#import "CommonLibHeader.h"
 
 #import "LBPictureCell.h"
 
@@ -25,6 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.picTabView];
+    [self.picTabView mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop).mas_offset(0);
+            make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom).mas_offset(0);
+        } else {
+            make.top.mas_equalTo(self.mas_topLayoutGuideBottom).mas_offset(0);
+            make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop).mas_offset(0);
+        }
+        make.left.right.mas_equalTo(self.view);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -33,8 +44,10 @@
     __weak typeof(self) weakSelf = self;
     [[LBHelper shareManage] httpImgUrls:^(NSArray *arr) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.arrUrls = arr;
-        [strongSelf.picTabView reloadData];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            strongSelf.arrUrls = arr;
+            [strongSelf.picTabView reloadData];
+        });
     }];
 }
 
@@ -64,7 +77,7 @@
 - (UITableView *)picTabView {
     if (!_picTabView) {
         _picTabView = [[UITableView alloc] init];
-        _picTabView.backgroundColor = [UIColor blueColor];
+        _picTabView.backgroundColor = [UIColor whiteColor];
         _picTabView.delegate = self;
         _picTabView.dataSource = self;
         _picTabView.rowHeight = UITableViewAutomaticDimension;

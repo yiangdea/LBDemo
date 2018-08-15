@@ -36,19 +36,27 @@
     }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *str = @"https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss";
-        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-        NSString *html = [NSString stringWithContentsOfURL:[NSURL URLWithString:str] encoding:enc error:nil];
-        NSLog(@"%@",html);
+        NSError *error = nil;
+        NSString *html = [NSString stringWithContentsOfURL:[NSURL URLWithString:str] encoding:NSUTF8StringEncoding error:&error];
+        NSLog(@"%@",error);
         NSArray *array = [html componentsSeparatedByString:@"\""];
         NSMutableArray *imgHttps = [NSMutableArray array];
+        NSMutableArray *arr = [NSMutableArray array];
         for (NSString *imgHttp in array) {
             if ([imgHttp hasSuffix:@"jpg"]) {
-                [imgHttps addObject:imgHttp];
+                [arr addObject:imgHttp];
+                if (arr.count == 2) {
+                    [imgHttps addObject:arr];
+                    arr = [NSMutableArray array];
+                }
             }
         }
-        self.arrImgUrls = array;
+        if (arr.count > 0) {
+            [imgHttps addObject:arr];
+        }
+        self.arrImgUrls = imgHttps;
         if (callBack) {
-            callBack(array);
+            callBack(imgHttps);
         }
     });
 }
