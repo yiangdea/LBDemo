@@ -24,7 +24,7 @@
         
         UITapGestureRecognizer *oneTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDisappear)];
         oneTapGesture.numberOfTapsRequired = 1;
-        [imageView addGestureRecognizer:oneTapGesture];
+        [self addGestureRecognizer:oneTapGesture];
     }
     return self;
 }

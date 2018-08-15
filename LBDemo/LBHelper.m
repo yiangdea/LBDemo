@@ -27,13 +27,22 @@
     return self;
 }
 
-- (void)httpImgUrls:(void(^)(NSArray *arr))callBack {
+- (void)httpImgUrls:(void(^)(NSArray *arr, NSError *error))callBack {
     if (self.arrImgUrls.count > 0) {
         if (callBack) {
-            callBack(self.arrImgUrls);
+            callBack(self.arrImgUrls, nil);
         }
         return;
     }
+//    if (callBack) {
+//        callBack(@[
+//                   @[@"http://www.nasa.gov/sites/default/files/thumbnails/image/28680508458_2745f5fa6e_k.jpg",
+//                   @"http://www.nasa.gov/sites/default/files/thumbnails/image/42535970511_bc542c6efc_o.jpg"],
+//                   @[@"http://www.nasa.gov/sites/default/files/thumbnails/image/pia22422.jpg"]
+//                   ], nil);
+//        return;
+//    }
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *str = @"https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss";
         NSError *error = nil;
@@ -56,7 +65,7 @@
         }
         self.arrImgUrls = imgHttps;
         if (callBack) {
-            callBack(imgHttps);
+            callBack(imgHttps, nil);
         }
     });
 }

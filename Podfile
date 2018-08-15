@@ -4,4 +4,5 @@ target 'LBDemo' do
 	pod 'AFNetworking'
 	pod 'Masonry'
         pod 'SDWebImage'
+	pod 'MJRefresh'
 end

@@ -43,7 +43,7 @@
         }];
         
         [self.imageRight mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.contentView).mas_offset(8);
+            make.right.mas_equalTo(self.contentView).mas_offset(-8);
             make.top.mas_greaterThanOrEqualTo(self.contentView).mas_offset(8);
             make.bottom.mas_lessThanOrEqualTo(self.contentView).mas_offset(-8);
             make.left.mas_equalTo(self.contentView.mas_centerX).mas_offset(8);

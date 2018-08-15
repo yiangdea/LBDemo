@@ -14,6 +14,6 @@
 
 + (instancetype)shareManage;
 
-- (void)httpImgUrls:(void(^)(NSArray *arr))callBack;
+- (void)httpImgUrls:(void(^)(NSArray *arr, NSError *error))callBack;
 
 @end

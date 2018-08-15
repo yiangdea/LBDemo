@@ -37,19 +37,28 @@
         }
         make.left.right.mas_equalTo(self.view);
     }];
+    
+    self.picTabView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
+        __weak typeof(self) weakSelf = self;
+        [[LBHelper shareManage] httpImgUrls:^(NSArray *arr, NSError *err) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [strongSelf.picTabView.mj_header endRefreshing];
+                if (err) {
+                    [strongSelf.picTabView.mj_header beginRefreshing];
+                } else {
+                    strongSelf.arrUrls = arr;
+                    [strongSelf.picTabView reloadData];
+                }
+            });
+        }];
+    }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    __weak typeof(self) weakSelf = self;
-    [[LBHelper shareManage] httpImgUrls:^(NSArray *arr) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            strongSelf.arrUrls = arr;
-            [strongSelf.picTabView reloadData];
-        });
-    }];
+    [self.picTabView.mj_header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,10 +92,11 @@
 - (UITableView *)picTabView {
     if (!_picTabView) {
         _picTabView = [[UITableView alloc] init];
-        _picTabView.backgroundColor = [UIColor whiteColor];
+        _picTabView.backgroundColor = [UIColor grayColor];
         _picTabView.delegate = self;
         _picTabView.dataSource = self;
         _picTabView.rowHeight = UITableViewAutomaticDimension;
+        _picTabView.estimatedRowHeight = 80;
     }
     return _picTabView;
 }

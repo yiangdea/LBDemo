@@ -11,6 +11,7 @@
 
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
 
 #endif /* CommonLibHeader_h */
 
